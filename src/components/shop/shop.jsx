@@ -11,7 +11,7 @@ const Shop = () => {
         <div className='d-flex flex-wrap justify-content-center '>
             {products?.map(product => {
                 return (
-                    <ProductCard title={product.title} imageUrl={product.image} description={product.description}>
+                    <ProductCard productId={product.id} price= {product.price} rating={product.rating.rate} title={product.title} imageUrl={product.image} description={product.description}>
 
                     </ProductCard>
                 )
