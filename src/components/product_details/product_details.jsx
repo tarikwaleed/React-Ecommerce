@@ -15,6 +15,7 @@ const ProductDetails = () => {
             .then(json => { setProduct(json) })
 
 
+
     }, [])
     return (
         <div className="d-flex" >

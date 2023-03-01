@@ -1,9 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container'
 
+
 function MyNavbar() {
+    const navigate = useNavigate()
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="p-3">
             <Container>
@@ -31,8 +33,8 @@ function MyNavbar() {
                         </Nav.Link>
                     </Nav>
                     <Nav className="gap-2">
-                        <Nav.Link className="btn btn-primary" href="#">Login</Nav.Link>
-                        <Nav.Link eventKey={2} className="btn btn-light text-black" href="#">
+                        <Nav.Link onClick={() => { navigate('/login') }} className="btn btn-primary" href="#">Login</Nav.Link>
+                        <Nav.Link onClick={() => { navigate('/register') }} eventKey={2} className="btn btn-light text-black" href="#">
                             Sign up
                         </Nav.Link>
                     </Nav>
