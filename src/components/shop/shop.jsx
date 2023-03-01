@@ -8,7 +8,7 @@ const Shop = () => {
         .then(res => res.json())
         .then(json => { setProducts(json) })
     return (
-        <div>
+        <div className='d-flex flex-wrap justify-content-center '>
             {products?.map(product => {
                 return (
                     <ProductCard title={product.title} imageUrl={product.image} description={product.description}>
