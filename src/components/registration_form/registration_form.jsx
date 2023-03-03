@@ -7,7 +7,7 @@ const RegistrationForm = () => {
         formState: { errors },
     } = useForm();
     const onRegisterButtonPressed = (data) => {
-        console.log(data);
+        alert(JSON.stringify(data))
     }
     return (
         <form onSubmit={handleSubmit(onRegisterButtonPressed)}>
@@ -76,6 +76,33 @@ const RegistrationForm = () => {
                     />
                     {errors.confirm_password && <p className="text-danger">{errors.confirm_password.message}</p>}
                 </div>
+
+                <>
+                    <div className="form-check">
+                        <input
+                            {...register("gender-check")}
+                            className="form-check-input"
+                            type="radio"
+                            value="male"
+                            name="gender-check"
+                            id="male" />
+                        <label className="form-check-label" htmlFor="">Male</label>
+                    </div>
+                    <div className="form-check">
+                        <input
+                            {...register("gender-check")}
+                            className="form-check-input"
+                            type="radio"
+                            name="gender-check"
+                            id="female"
+                            defaultChecked=""
+                            disabled=""
+                            value="female"
+                        />
+                        <label className="form-check-label" htmlFor="">Female</label>
+                    </div>
+                </>
+
 
                 <div class="d-grid gap-2">
                     <button type="submit" name="" id="" class="btn btn-primary">Login</button>
